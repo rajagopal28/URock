@@ -1,0 +1,38 @@
+{
+  "name": "u-rock",
+  "version": "1.0.0",
+  "description": "React app for gamifying reward points system",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajagopal28/URock.git"
+  },
+  "keywords": [
+    "gamification",
+    "urock"
+  ],
+  "author": "Rajagopal M",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rajagopal28/URock/issues"
+  },
+  "homepage": "https://rajagopal28.github.io/URock",
+  "private": true,
+  "dependencies": {
+    "material-ui": "^0.18.3",
+    "react": "^15.6.0",
+    "react-dom": "^15.6.0",
+    "react-tap-event-plugin": "^2.0.1"
+  },
+  "devDependencies": {
+    "react-scripts": "0.9.x"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
