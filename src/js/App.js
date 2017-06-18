@@ -3,6 +3,7 @@ import { hashHistory } from 'react-router'
 import { HashRouter as Router, Route, Redirect } from 'react-router-dom'
 
 import UserPaymentView from './components/UserPaymentView'
+import HomeView from './components/HomeView'
 import ContactsView from './components/ContactsView'
 import GlobalLeaderBoard from './components/GlobalLeaderBoard'
 import Navigation from './components/Navigation'
@@ -21,7 +22,7 @@ class App extends Component {
             <div>
                 <Router history={hashHistory}>
                     <Navigation>
-                        <Route path="/home" component={ContactsView}/>
+                        <Route path="/home" component={HomeView}/>
                         <Route path="/users" component={ContactsView}/>
                         <Route path="/payments/:userId" component={UserPaymentView}/>
                         <Route path="/global-rewards" component={GlobalLeaderBoard}/>

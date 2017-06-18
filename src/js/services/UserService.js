@@ -6,10 +6,10 @@ class UserService extends BaseService {
     };
 
     getUserPayments = (userId, cb) => {
-        return super.apiGet('/payments/all?userId=' + userId, cb);
+        return super.apiGet('/v2/payments/all?userId=' + userId, cb);
     };
     getCumulativeRewards = (cb) => {
-        return super.apiGet('/user-rewards/cumulative', cb);
+        return super.apiGet('/v2/user-rewards/cumulative', cb);
     }
 
 }
