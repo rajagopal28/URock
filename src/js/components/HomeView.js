@@ -12,7 +12,7 @@ class HomeView extends Component {
         return (
             <div>
                 <PaperToolbar title="Home" iconClassName="muidocs-icon-action-home"/>
-                <Card>
+                <Card className="inner-padding">
                     <CardHeader
                         title="Welcome"
                         avatar={logo}
