@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-//import FontIcon from 'material-ui/FontIcon';
-import ActionAndroid from 'material-ui/svg-icons/action/android';
+import ActionCardGiftcard from 'material-ui/svg-icons/action/card-giftcard';
+import { blue500 } from 'material-ui/styles/colors';
 
 class ContactItem extends Component {
     render() {
         return (
             <Card>
                 <CardHeader
-                  title={this.props.name}
-                  subtitle={this.props.email}
-                  actAsExpander={true}
-                  showExpandableButton={true}
+                    title={this.props.name}
+                    subtitle={this.props.email}
+                    actAsExpander={true}
+                    showExpandableButton={true}
                 />
                 <CardActions>
-                  <FlatButton label="Remove" icon={<ActionAndroid />} />
+                    <FlatButton label="View Payments" containerElement={<Link to={'/payments/'+this.props.id} />}
+                                icon={<ActionCardGiftcard color={blue500} />}/>
                 </CardActions>
                 <CardText expandable={true}>
                     {this.props.description}
                 </CardText>
-              </Card>
+            </Card>
         );
     }
 }

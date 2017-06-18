@@ -2,8 +2,15 @@ import BaseService from './BaseService'
 
 class UserService extends BaseService {
     getUsers = (cb) => {
-        return super.apiGet('/api/users/all', cb);
+        return super.apiGet('/users/all', cb);
     };
+
+    getUserPayments = (userId, cb) => {
+        return super.apiGet('/payments/all?userId=' + userId, cb);
+    };
+    getCumulativeRewards = (cb) => {
+        return super.apiGet('/user-rewards/cumulative', cb);
+    }
 
 }
 

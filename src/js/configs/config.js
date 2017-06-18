@@ -1,5 +1,5 @@
 class Config {
-    static base_url = 'http://localhost:8080';
+    static base_url = 'http://gamifier-dextrous.rhcloud.com/api/v2';
 }
 
 export default Config;
