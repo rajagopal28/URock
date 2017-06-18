@@ -6,6 +6,7 @@ import UserPaymentView from './components/UserPaymentView'
 import HomeView from './components/HomeView'
 import ContactsView from './components/ContactsView'
 import GlobalLeaderBoard from './components/GlobalLeaderBoard'
+import PromotionsView from './components/PromotionsView'
 import Navigation from './components/Navigation'
 
 import './../css/App.css';
@@ -26,6 +27,7 @@ class App extends Component {
                         <Route path="/users" component={ContactsView}/>
                         <Route path="/payments/:userId" component={UserPaymentView}/>
                         <Route path="/global-rewards" component={GlobalLeaderBoard}/>
+                        <Route path="/promotions" component={PromotionsView}/>
                         <Redirect from="/" to="/home" />
                     </Navigation>
                 </Router>

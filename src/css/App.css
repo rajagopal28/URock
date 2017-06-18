@@ -14,7 +14,10 @@
   color: white;
 }
 .main-container {
-  margin: 0 10%;
+  margin: 10% 10%;
+}
+.inner-padding {
+    padding: 2% 2%;
 }
 .App-intro {
   font-size: large;

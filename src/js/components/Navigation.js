@@ -9,11 +9,11 @@ import IconButton from 'material-ui/IconButton';
 import Paper from 'material-ui/Paper';
 
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
-import PersonAdd from 'material-ui/svg-icons/social/person-add';
+import ActionHome from 'material-ui/svg-icons/action/home';
+import ImageTagFaces from 'material-ui/svg-icons/image/tag-faces';
 import HardwareVideogameAsset from 'material-ui/svg-icons/hardware/videogame-asset';
 import Divider from 'material-ui/Divider';
-import ContentCopy from 'material-ui/svg-icons/content/content-copy';
+import MapsLocalOffer from 'material-ui/svg-icons/maps/local-offer';
 import Download from 'material-ui/svg-icons/file/file-download';
 import Delete from 'material-ui/svg-icons/action/delete';
 
@@ -39,11 +39,11 @@ class Navigation extends Component {
                     />
                     <Menu onItemTouchTap={this.toggleDrawer}>
                         <MenuItem primaryText="Home" containerElement={<Link to="/home" />}
-                                  leftIcon={<RemoveRedEye />}/>
-                        <MenuItem primaryText="Users" containerElement={<Link to="/users" />}  leftIcon={<PersonAdd />}/>
+                                  leftIcon={<ActionHome />}/>
+                        <MenuItem primaryText="Users" containerElement={<Link to="/users" />}  leftIcon={<ImageTagFaces />}/>
                         <MenuItem primaryText="Leadership Board" containerElement={<Link to="/global-rewards" />}  leftIcon={<HardwareVideogameAsset />}/>
                         <Divider />
-                        <MenuItem primaryText="Make a copy" leftIcon={<ContentCopy />}/>
+                        <MenuItem primaryText="Promotions"  containerElement={<Link to="/promotions" />}  leftIcon={<MapsLocalOffer />}/>
                         <MenuItem primaryText="Download" leftIcon={<Download />}/>
                         <Divider />
                         <MenuItem primaryText="Remove" leftIcon={<Delete />}/>
