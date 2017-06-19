@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Card, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 import home_background from '../../images/home_background.png'
-import logo from '../../images/logo.svg'
+import kickbuttowski from '../../images/kickbuttowski.png'
 
 import PaperToolbar from './PaperToolbar';
 
@@ -15,7 +15,7 @@ class HomeView extends Component {
                 <Card className="inner-padding">
                     <CardHeader
                         title="Welcome"
-                        avatar={logo}
+                        avatar={kickbuttowski}
                     />
                     <CardMedia>
                         <img src={home_background} alt="Home"/>

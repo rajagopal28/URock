@@ -47,10 +47,10 @@ class UserPaymentView extends Component {
                 <TableRowColumn>{payment.id}</TableRowColumn>
                 <TableRowColumn>{payment.description}</TableRowColumn>
                 <TableRowColumn>{payment.amount} {payment.user.currencyType}</TableRowColumn>
+                <TableRowColumn>{payment.createdTS}</TableRowColumn>
                 <TableRowColumn>
                     {promotionElement}
                 </TableRowColumn>
-                <TableRowColumn>{payment.createdTS}</TableRowColumn>
             </TableRow>
 
         });
@@ -67,7 +67,7 @@ class UserPaymentView extends Component {
             discount: 'NA'
         };
         if(this.state.displayedPromotion) {
-            promotion = this.state.displayedPromotion;
+            promotion.promotionName = this.state.displayedPromotion.promotionName;
             promotion.rewadFactor = this.state.displayedPromotion.rewardMultiplier + 'X' ;
             promotion.discount = (this.state.displayedPromotion.discount * 100) + '%' ;
         }
@@ -82,8 +82,8 @@ class UserPaymentView extends Component {
                             <TableHeaderColumn>ID</TableHeaderColumn>
                             <TableHeaderColumn>Description</TableHeaderColumn>
                             <TableHeaderColumn>Amount</TableHeaderColumn>
-                            <TableHeaderColumn>Promotions Applied</TableHeaderColumn>
                             <TableHeaderColumn>Payment Date</TableHeaderColumn>
+                            <TableHeaderColumn>Promotions Applied</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
