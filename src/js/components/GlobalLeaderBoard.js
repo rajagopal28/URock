@@ -22,8 +22,7 @@ class GlobalLeaderBoard extends Component {
     }
 
     refreshData = (category) => {
-        let selectedCategory = category !== 'ALL'  ? category : '';
-        new UserService().getCumulativeRewards(selectedCategory, (response) => {
+        new UserService().getCumulativeRewards(category, (response) => {
             let stats = response.map((item) => {
                 item.username = item.user.firstName + ' ' + item.user.lastName;
                 return item;

@@ -1,27 +1,21 @@
 import React, { Component } from 'react';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
-import Dialog from 'material-ui/Dialog';
-import Subheader from 'material-ui/Subheader';
 import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
 
 import PaperToolbar from './PaperToolbar';
+import Subheader from 'material-ui/Subheader';
+import PromotionDialog from './PromotionDialog';
 import UserService from '../services/UserService';
 
 class UserPaymentView extends Component {
     state = {
         payments: [],
-        showDialog: false,
         displayedPromotion: null
     };
 
     showPromotionsDialog(promotion) {
-        this.setState({showDialog: true, displayedPromotion: promotion});
+        this.setState({ displayedPromotion: promotion});
     }
-
-    hidePromotionsDialog = () => {
-        this.setState({showDialog: false, displayedPromotion: null});
-    };
 
     componentDidMount() {
         let userId = this.props.match.params.userId;
@@ -54,24 +48,16 @@ class UserPaymentView extends Component {
             </TableRow>
 
         });
-        let actions = [
-            <FlatButton
-                label="Ok"
-                primary={true}
-                keyboardFocused={true}
-                onTouchTap={this.hidePromotionsDialog}
-            />];
-        let promotion = {
-            promotionName : 'NA',
-            rewardFactor : 'NA',
-            discount: 'NA'
-        };
+
+        let promotion = {};
+        let show = false;
         if(this.state.displayedPromotion) {
-            promotion.promotionName = this.state.displayedPromotion.promotionName;
-            promotion.rewadFactor = this.state.displayedPromotion.rewardMultiplier + 'X' ;
-            promotion.discount = (this.state.displayedPromotion.discount * 100) + '%' ;
+            show = true;
+            promotion = this.state.displayedPromotion;
+            promotion.time = new Date().getTime();
         }
         return (
+
             <div>
                 <PaperToolbar title="PaymentsView" iconClassName="muidocs-icon-action-home"/>
                 <Subheader>Payments of User
@@ -90,17 +76,7 @@ class UserPaymentView extends Component {
                         {tableRows}
                     </TableBody>
                 </Table>
-                <Dialog
-                    title="Promotion Details"
-                    actions={actions}
-                    modal={false}
-                    open={this.state.showDialog}
-                    onRequestClose={this.hidePromotionsDialog}
-                >
-                    <Subheader><b>Name:</b>{promotion.promotionName}</Subheader>
-                    <Subheader><b>Reward factor:</b>{promotion.rewadFactor}</Subheader>
-                    <Subheader><b>Discount:</b>{promotion.discount}</Subheader>
-                </Dialog>
+                <PromotionDialog show={show} promotion={promotion}/>
             </div>
         );
     }
