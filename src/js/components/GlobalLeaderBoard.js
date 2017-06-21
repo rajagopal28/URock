@@ -3,16 +3,23 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColu
 import Subheader from 'material-ui/Subheader';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import PaperToolbar from './PaperToolbar';
+import PromotionDialog from './PromotionDialog';
 import UserService from '../services/UserService';
 
 class GlobalLeaderBoard extends Component {
     state = {
         stats: [],
         selectedCategory: 'ALL',
-        categories: []
+        categories: [],
+        displayedPromotion: null
     };
+
+    showPromotionsDialog(promotion) {
+        this.setState({ displayedPromotion: promotion});
+    }
 
     componentDidMount() {
         new UserService().getCategories((response) => {
@@ -31,22 +38,39 @@ class GlobalLeaderBoard extends Component {
         })
     };
     handleCategoryChange = (e, key, data) => {
-        this.setState({selectedCategory: data});
+        this.setState({selectedCategory: data, displayedPromotion: null});
         this.refreshData(data);
     };
 
     render() {
         let tableRows = this.state.stats.map((item) => {
+            let promotionElement = null;
+            if (item.promotion) {
+                promotionElement = <RaisedButton label="View" primary={true}
+                                                 onTouchTap={() => this.showPromotionsDialog(item.promotion) }/>;
+            } else {
+                promotionElement = 'NA';
+            }
             return <TableRow key={item.id}>
                 <TableRowColumn>{item.username}</TableRowColumn>
-                <TableRowColumn>{item.category ? item.category : 'NA'}</TableRowColumn>
+                <TableRowColumn>{item.category}</TableRowColumn>
                 <TableRowColumn>{item.value}</TableRowColumn>
+                <TableRowColumn>{promotionElement}</TableRowColumn>
             </TableRow>
 
         });
         let menuItems = this.state.categories.map((category, index) => {
             return <MenuItem key={index} value={category} primaryText={category}/>
         });
+
+        let promotion = {};
+        let show = false;
+        if(this.state.displayedPromotion) {
+            show = true;
+            promotion = this.state.displayedPromotion;
+            promotion.time = new Date().getTime();
+        }
+
         return (
             <div>
                 <PaperToolbar title="Global Leadership Board" iconClassName="material-icons"/>
@@ -65,12 +89,14 @@ class GlobalLeaderBoard extends Component {
                                 <TableHeaderColumn>User</TableHeaderColumn>
                                 <TableHeaderColumn>Category</TableHeaderColumn>
                                 <TableHeaderColumn>Value</TableHeaderColumn>
+                                <TableHeaderColumn>Promotion Applicable</TableHeaderColumn>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {tableRows}
                         </TableBody>
                     </Table>
+                    <PromotionDialog show={show} promotion={promotion}/>
                 </div>
             </div>
         );
