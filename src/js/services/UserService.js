@@ -19,6 +19,10 @@ class UserService extends BaseService {
         return super.apiGet('/v2/categories', cb);
     };
 
+    addPayment = (data, cb) => {
+        return super.apiPost('/v2/payments/add', data, cb);
+    };
+
 }
 
 

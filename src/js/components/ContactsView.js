@@ -15,7 +15,6 @@ class ContactsView extends Component {
             _self.setState({
                 users: response.map((user) => {
                     user.name = user.firstName + ' ' + user.lastName;
-                    console.log(user);
                     return user;
                 })
             });

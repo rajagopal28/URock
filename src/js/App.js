@@ -8,6 +8,7 @@ import ContactsView from './components/ContactsView'
 import GlobalLeaderBoard from './components/GlobalLeaderBoard'
 import PromotionsView from './components/PromotionsView'
 import Navigation from './components/Navigation'
+import AddPaymentView from './components/AddPaymentView'
 
 import './../css/App.css';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
@@ -28,6 +29,7 @@ class App extends Component {
                         <Route path="/payments/:userId" component={UserPaymentView}/>
                         <Route path="/global-rewards" component={GlobalLeaderBoard}/>
                         <Route path="/promotions" component={PromotionsView}/>
+                        <Route path="/add-payment/:userId?" component={AddPaymentView}/>
                         <Redirect from="/" to="/home" />
                     </Navigation>
                 </Router>

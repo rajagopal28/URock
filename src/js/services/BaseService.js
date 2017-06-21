@@ -9,6 +9,16 @@ class BaseService {
             .then(this.parseJSON)
             .then(cb);
     }
+
+    apiPost(path, body, cb) {
+        return fetch(Config.base_url + path, {
+            method: 'POST',
+            body: this.getFormData(body)
+        }).then(this.checkStatus)
+            .then(this.parseJSON)
+            .then(cb);
+    }
+
     checkStatus = (response) => {
         if (response.status >= 200 && response.status < 300) {
             return response;
@@ -23,6 +33,16 @@ class BaseService {
     parseJSON = (response) => {
         return response.json();
     };
+
+    getFormData = (jsonData) => {
+        var form = new FormData();
+        for(var key in jsonData) {
+            if(jsonData.hasOwnProperty(key)) {
+                form.append(key, jsonData[key]);
+            }
+        }
+        return form;
+    }
 }
 
 

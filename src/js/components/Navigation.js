@@ -14,8 +14,7 @@ import ImageTagFaces from 'material-ui/svg-icons/image/tag-faces';
 import HardwareVideogameAsset from 'material-ui/svg-icons/hardware/videogame-asset';
 import Divider from 'material-ui/Divider';
 import MapsLocalOffer from 'material-ui/svg-icons/maps/local-offer';
-import Download from 'material-ui/svg-icons/file/file-download';
-import Delete from 'material-ui/svg-icons/action/delete';
+import EditorAttachMoney from 'material-ui/svg-icons/editor/attach-money';
 
 class Navigation extends Component {
     state = {drawerOpen: false};
@@ -40,13 +39,16 @@ class Navigation extends Component {
                     <Menu onItemTouchTap={this.toggleDrawer}>
                         <MenuItem primaryText="Home" containerElement={<Link to="/home" />}
                                   leftIcon={<ActionHome />}/>
-                        <MenuItem primaryText="Users" containerElement={<Link to="/users" />}  leftIcon={<ImageTagFaces />}/>
-                        <MenuItem primaryText="Leadership Board" containerElement={<Link to="/global-rewards" />}  leftIcon={<HardwareVideogameAsset />}/>
                         <Divider />
-                        <MenuItem primaryText="Promotions"  containerElement={<Link to="/promotions" />}  leftIcon={<MapsLocalOffer />}/>
-                        <MenuItem primaryText="Download" leftIcon={<Download />}/>
+                        <MenuItem primaryText="Users" containerElement={<Link to="/users" />}
+                                  leftIcon={<ImageTagFaces />}/>
+                        <MenuItem primaryText="Leadership Board" containerElement={<Link to="/global-rewards" />}
+                                  leftIcon={<HardwareVideogameAsset />}/>
                         <Divider />
-                        <MenuItem primaryText="Remove" leftIcon={<Delete />}/>
+                        <MenuItem primaryText="Promotions" containerElement={<Link to="/promotions" />}
+                                  leftIcon={<MapsLocalOffer />}/>
+                        <MenuItem primaryText="Add payment(Mock)" containerElement={<Link to="/add-payment" />}
+                                  leftIcon={<EditorAttachMoney />}/>
                     </Menu>
                 </Drawer>
                 <div className="main-container">
