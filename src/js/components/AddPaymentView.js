@@ -6,6 +6,8 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton';
 import Snackbar from 'material-ui/Snackbar';
 
+import EditorAttachMoney from 'material-ui/svg-icons/editor/attach-money';
+
 import PaperToolbar from './PaperToolbar';
 import UserService from '../services/UserService';
 
@@ -100,7 +102,7 @@ class AddPaymentView extends Component {
             return <MenuItem key={index} value={category} primaryText={category}/>
         });
         return ( <div>
-            <PaperToolbar title="Add payment" iconClassName="material-icons"/>
+            <PaperToolbar title="Add payment" iconElement={<EditorAttachMoney/>}/>
             <div className="inner-padding" style={style}>
                 <Subheader>Add payment for a user</Subheader>
                 <SelectField

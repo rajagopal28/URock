@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Card, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import ActionHome from 'material-ui/svg-icons/action/home';
 
 import home_background from '../../images/home_background.png'
 import kickbuttowski from '../../images/kickbuttowski.png'
@@ -11,7 +12,7 @@ class HomeView extends Component {
     render() {
         return (
             <div>
-                <PaperToolbar title="Home" iconClassName="muidocs-icon-action-home"/>
+                <PaperToolbar title="Home" iconElement={<ActionHome/>}/>
                 <Card className="inner-padding">
                     <CardHeader
                         title="Welcome"

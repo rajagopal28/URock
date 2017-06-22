@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import EditorAttachMoney from 'material-ui/svg-icons/editor/attach-money';
+
 import PaperToolbar from './PaperToolbar';
 import Subheader from 'material-ui/Subheader';
 import PromotionDialog from './PromotionDialog';
@@ -59,7 +61,7 @@ class UserPaymentView extends Component {
         return (
 
             <div>
-                <PaperToolbar title="PaymentsView" iconClassName="muidocs-icon-action-home"/>
+                <PaperToolbar title="PaymentsView" iconElement={<EditorAttachMoney/>}/>
                 <Subheader>Payments of User
                     : {this.state.payments.length > 0 ? this.state.payments[0].user.firstName : 'NA'}</Subheader>
                 <Table>

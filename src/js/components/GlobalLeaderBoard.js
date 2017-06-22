@@ -5,6 +5,8 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import HardwareVideogameAsset from 'material-ui/svg-icons/hardware/videogame-asset';
+
 import PaperToolbar from './PaperToolbar';
 import PromotionDialog from './PromotionDialog';
 import UserService from '../services/UserService';
@@ -73,7 +75,7 @@ class GlobalLeaderBoard extends Component {
 
         return (
             <div>
-                <PaperToolbar title="Global Leadership Board" iconClassName="material-icons"/>
+                <PaperToolbar title="Global Leadership Board" iconElement={<HardwareVideogameAsset/>}/>
                 <div className="inner-padding">
                     <Subheader>Cumulative Reward points of all Users</Subheader>
                     <SelectField

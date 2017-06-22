@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import Subheader from 'material-ui/Subheader';
 
+import MapsLocalOffer from 'material-ui/svg-icons/maps/local-offer';
+
 import PaperToolbar from './PaperToolbar';
 import UserService from '../services/UserService';
 
@@ -32,7 +34,7 @@ class PromotionsView extends Component {
         });
         return (
             <div>
-                <PaperToolbar title="Global Leadership Board" iconClassName="material-icons"/>
+                <PaperToolbar title="User Promotions" iconElement={<MapsLocalOffer/>}/>
                 <div className="inner-padding">
                     <Subheader>All promotions on user payments</Subheader>
                     <Table>

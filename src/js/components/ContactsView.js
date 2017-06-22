@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ImageTagFaces from 'material-ui/svg-icons/image/tag-faces';
 
 import PaperToolbar from './PaperToolbar';
 import ContactItem from './ContactItem';
@@ -27,7 +28,7 @@ class ContactsView extends Component {
         });
         return (
             <div>
-                <PaperToolbar title="Users" iconClassName="muidocs-icon-action-home"/>
+                <PaperToolbar title="Users" iconElement={<ImageTagFaces/>}/>
                 <div className="inner-padding">{cardsList} </div>
             </div>
         );

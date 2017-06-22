@@ -7,14 +7,15 @@ import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import Paper from 'material-ui/Paper';
+import Divider from 'material-ui/Divider';
 
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import ImageTagFaces from 'material-ui/svg-icons/image/tag-faces';
 import HardwareVideogameAsset from 'material-ui/svg-icons/hardware/videogame-asset';
-import Divider from 'material-ui/Divider';
 import MapsLocalOffer from 'material-ui/svg-icons/maps/local-offer';
 import EditorAttachMoney from 'material-ui/svg-icons/editor/attach-money';
+
 
 class Navigation extends Component {
     state = {drawerOpen: false};
