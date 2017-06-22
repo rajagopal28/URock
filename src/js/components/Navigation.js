@@ -16,6 +16,7 @@ import HardwareVideogameAsset from 'material-ui/svg-icons/hardware/videogame-ass
 import MapsLocalOffer from 'material-ui/svg-icons/maps/local-offer';
 import EditorAttachMoney from 'material-ui/svg-icons/editor/attach-money';
 
+import github from '../../images/github.svg';
 
 class Navigation extends Component {
     state = {drawerOpen: false};
@@ -28,7 +29,8 @@ class Navigation extends Component {
             <div>
                 <AppBar
                     title="URock"
-                    iconClassNameRight="muidocs-icon-navigation-expand-more"
+                    iconElementRight={<a href="https://github.com/rajagopal28/URock" alt="Source Code">
+                            <img src={github} className="toolbar-icon" alt="Home"/></a>}
                     onLeftIconButtonTouchTap={this.toggleDrawer}
                 />
                 <Drawer open={this.state.drawerOpen}>
