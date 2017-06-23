@@ -1,6 +1,6 @@
 # URock
 A React based web application for the gamifying reward points system
-
+[Live Link](https://rajagopal28.github.io/URock/)
 uses npm to manage dependencies, build and deploy
 
 To setup
@@ -33,3 +33,12 @@ Your app is ready to be deployed.
 
 To deploy to gh-pages in git
 ### `npm run deploy` or `yarn deploy`
+
+
+# Major Modules used
+- React
+- React Dom
+- MaterialUi for React
+- React Router
+- React Router Dom
+- React Tap Event Plugin
