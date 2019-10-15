@@ -28,7 +28,7 @@
 - Promotions - personalized promotions on categories that the user can potentially be spending but has no idea about how to efficiently spend in them.
 
 ### The backend architecture:
-![BackendSchema](https://file.ac/0M76LyfAGq8/schema.png)
+![BackendSchema](./images/schema.png)
 
 ### The Major tech nuances:
 
@@ -37,19 +37,19 @@
 - Personalized promotions - Promotions are availed based on current user payment as well as their position in the leadership board.
 
 ### The Implemented User Journeys:
-![Home](https://file.ac/0M76LyfAGq8/home.png)
+![Home](./images/home.png)
 #### User list
-![Users](https://file.ac/0M76LyfAGq8/users.png)
-![User Payments](https://file.ac/0M76LyfAGq8/user-payments.png)
+![Users](./images/users.png)
+![User Payments](./images/user-payments.png)
 #### Promotions list
-![Promotions](https://file.ac/0M76LyfAGq8/promotions.png)
+![Promotions](./images/promotions.png)
 #### Global leadership board
-![Leadership Board](https://file.ac/0M76LyfAGq8/leadership-board.png)
+![Leadership Board](./images/leadership-board.png)
 #### Category wise filters on the leadership board
-![Leadership Board Dining](https://file.ac/0M76LyfAGq8/leadership-board-dining.png)
-![Leadership Board Clothing](https://file.ac/0M76LyfAGq8/leadership-board-clothing.png)
-![Leadership Board Clothing Promotion](https://file.ac/0M76LyfAGq8/ledership-board-view-promotion-modal-dining.png)
-![Leadership Board Fuel](https://file.ac/0M76LyfAGq8/leadership-board-fuel.png)
+![Leadership Board Dining](./images/leadership-board-dining.png)
+![Leadership Board Clothing](./images/leadership-board-clothing.png)
+![Leadership Board Clothing Promotion](./images/leadership-board-view-promotion-modal-dining.png)
+![Leadership Board Fuel](./images/leadership-board-fuel.png)
 
 ### Up and Running:
 - The static React app is deployed to gh-pages and the URL is here [Live Link](https://rajagopal28.github.io/URock/)
